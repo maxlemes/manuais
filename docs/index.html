@@ -9,7 +9,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Max Lemes" />
 
 
 <title>Como medir o risco de um investimento.</title>
@@ -165,21 +164,38 @@ pre code {
 
 
 <h1 class="title toc-ignore">Como medir o risco de um investimento.</h1>
-<h4 class="author">Max Lemes</h4>
 
 </div>
 
 
-<p><strong>Público Alvo:</strong> Alunos de graduação que tenham cursado Algebra Linear, Cálculo 2 e Estatística.</p>
-<p><strong>Objetivo:</strong> Apresentar a análise de risco de investimentos utilizando ferramentas de Matemática e Estatística.</p>
-<div id="resumo" class="section level2">
-<h2>Resumo</h2>
-<p>Em 1999 Artzner, Delbaen, Eber e Heath (veja [1]) definiram que, para que uma função <span class="math inline">\(\mathcal{R}\)</span> possa ser considerada uma <em>medida de risco coerente</em> ela precisa satisfazer quatro propriedades: subaditividade, homogeneidade, monotonicidade e translação. Com esta definição podemos definir algumas alternativas para se medir o risco de um investimento, como por exemplo a volatilidade dos retornos ou a probilidade da perda. Uma vez definida a maneira de se medir o risco podemos usá-la na construção ou análise de portfólios.</p>
+<div id="introdução" class="section level1">
+<h1>Introdução</h1>
+<p>No mundo dos investimentos um dos principais pontos a serem obvervados é o risco de um ativo, isto é, a possibilidade de perder dinheiro investindo nele. Existem investimentos que são <code>livres de risco</code>, ou seja, não existe a possibilidade de se perder dinheiro investindo neste tipo de ativo, alguns exemplos são: os títulos do Tesouro, CDB, LCA, LCI, etc.</p>
+<p>O motivo que leva um investidor a escolher um ativo de risco é a expectativa de obter um retorno maior que o de investir um ativo livre de risco que compense a possibilidade da perda do investimento. Existem inúmeras abordagens para seleção de ativos na montagem de um portfolio de investimento, entre as mais utilizadas estão:</p>
+<ol style="list-style-type: lower-alpha">
+<li>A distribuição por proporção (DP), que consiste em escolher previamente a proporção que cada ativo terá no portfólio.</li>
+<li>A distribuição por desempenho (DD), escolher a proporção dos ativos segundo o desempenho dos mesmos.</li>
+<li>A distribuição por risco (DR), escolher a proporção dos ativos no portfólio segundo o risco de cada um.</li>
+</ol>
+<p>em cada uma destas estratégias, faz-se um rebalanceamento periódico.</p>
+<p>As estratégias do tipo DP são bastante utilizadas na prática por pessas físicas por sua simplicidade. A estratégia DD encontra mais adeptos entre investidores com certo grau de sofisticação e gestores. Já a estratégia DR, por ser mais recente e por exigir um conhecimento mais técnico de matemática e estatística é a menos utilizada, entretanto vem ganhando cada vez mais adeptos no mercado, principalmente nos fundos classificados como quantitativos.</p>
+<p>Abordaremos neste trabalho algumas possibilidades que a abordagem DR permite, fazendo uma comparação com a abordagem do tipo DP, a mais simples de todas, em que todos os ativos tem pesos iguais (PI).</p>
 </div>
-<div id="referências" class="section level2">
-<h2>Referências</h2>
+<div id="a-definição-de-risco" class="section level1">
+<h1>A definição de risco</h1>
+<p>Para construirmos estratégias do tipo DR precisamos definir uma maneira de medir o risco de cada ativo. Diremos que um portfólio com <span class="math inline">\(n\)</span> ativos é um vetor do tipo <span class="math inline">\(x = (x_1, x_2, \dots, x_n)^\top\)</span> onde cada coordenada <span class="math inline">\(x_i\)</span> do portfólio <span class="math inline">\(x\)</span> é a proporção do capital aplicada no ativo <span class="math inline">\(i\)</span>. Assumiremos que o capital está totalmente alocado, isto é, <span class="math inline">\(e^\top x=1\)</span>, onde <span class="math inline">\(e = (1,1,\dots,1)\)</span>. Além disso, consideraremos <span class="math inline">\(x_i\geq 0\)</span> para todo <span class="math inline">\(i\)</span>, isto significa que o investidor não pode “vender sem ter” a ação em carteira.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>Em 1999 Artzner, Delbaen, Eber e Heath (veja [1]) definiram que, para que uma função <span class="math inline">\(\mathcal{R}(x)\)</span> possa ser considerada uma <em>medida de risco coerente</em> ela precisa satisfazer quatro propriedades: subaditividade, homogeneidade, monotonicidade e translação. Com esta definição podemos definir algumas alternativas para se medir o risco de um investimento, como por exemplo a volatilidade dos retornos ou a probilidade da perda. Uma vez definida a maneira de se medir o risco podemos usá-la na construção ou análise de portfólios.</p>
+</div>
+<div id="referências" class="section level1">
+<h1>Referências</h1>
 <p>[1] Artzner A., Delbaen F., Eber J.-M. and Heath D., <em>Coherent Measures of Risk</em>, Mathematical Finance, 9(3), pp. 203-228, 1999.</p>
 <p>[2] Roncalli, T., <em>Introduction to Risk Parity and Budgeting</em>, CRC Press, 2014.</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Pode parecer estranho a primeira vista a possibilidade de se vender um bem que não possui. Porém esta prática é comum no mercado e é chamada de <strong>venda à descoberto</strong>.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
 
 

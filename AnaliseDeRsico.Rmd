@@ -1,14 +1,5 @@
 ---
-knit: (function(input_file, encoding) {
-  out_dir <- 'docs';
-  rmarkdown::render(input_file,
- encoding=encoding,
- output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
- 
 title: "Como medir o risco de um investimento."
-author: "Max Lemes"
-date: ""
-output: html_document
 ---
 
 ```{r setup, include=FALSE}
