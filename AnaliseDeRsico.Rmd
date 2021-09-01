@@ -1,0 +1,35 @@
+---
+knit: (function(input_file, encoding) {
+  out_dir <- 'docs';
+  rmarkdown::render(input_file,
+ encoding=encoding,
+ output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
+ 
+title: "Como medir o risco de um investimento."
+author: "Max Lemes"
+date: ""
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**Público Alvo:** Alunos de graduação que tenham cursado Algebra Linear,  Cálculo 2 e Estatística.
+
+\bigskip
+
+**Objetivo:** Apresentar a análise de risco de investimentos utilizando ferramentas de Matemática e Estatística.
+
+\bigskip
+
+
+## Resumo
+Em 1999 Artzner, Delbaen, Eber e Heath (veja [1]) definiram que, para que uma função $\mathcal{R}$ possa ser considerada uma *medida de risco coerente* ela precisa satisfazer quatro propriedades: subaditividade, homogeneidade, monotonicidade e translação. Com esta definição podemos definir algumas alternativas para se medir o risco de um investimento, como por exemplo a volatilidade dos retornos ou a probilidade da perda. Uma vez definida a maneira de se medir o risco podemos usá-la na construção ou análise de portfólios.
+
+
+## Referências 
+[1] Artzner A., Delbaen F., Eber J.-M. and Heath D., *Coherent
+Measures of Risk*, Mathematical Finance, 9(3), pp. 203-228, 1999.
+
+[2] Roncalli, T., *Introduction to Risk Parity and Budgeting*, CRC Press, 2014.
