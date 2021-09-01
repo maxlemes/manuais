@@ -1,0 +1,41 @@
+---
+knit: (function(input_file, encoding) {
+  out_dir <- 'docs';
+  rmarkdown::render(input_file,
+ encoding=encoding,
+ output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
+title: "Como medir o risco de um investimento."
+---
+
+# Introdução
+No mundo dos investimentos um dos principais pontos a serem obvervados é o risco de um ativo, isto é, a possibilidade de perder dinheiro investindo nele. Existem investimentos que são `livres de risco`, ou seja, não existe a possibilidade de se perder dinheiro investindo neste tipo de ativo, alguns exemplos são: os títulos do Tesouro, CDB, LCA, LCI, etc.
+
+O motivo que leva um investidor a escolher um ativo de risco é a expectativa de obter um retorno maior que o de investir um ativo livre de risco que compense a possibilidade da perda do investimento. Existem inúmeras abordagens para seleção de ativos na montagem de um portfolio de investimento, entre as mais utilizadas estão:
+
+a) A distribuição por proporção (DP), que consiste em escolher previamente a proporção que cada ativo terá no portfólio. 
+b) A distribuição por desempenho (DD), escolher a proporção dos ativos segundo o desempenho dos mesmos.
+c) A distribuição por risco (DR), escolher a proporção dos ativos no portfólio segundo o risco de cada um.
+
+em cada uma destas estratégias, faz-se um rebalanceamento periódico.
+
+As estratégias do tipo DP são bastante utilizadas na prática por pessas físicas por sua simplicidade. A estratégia DD encontra mais adeptos entre investidores com certo grau de sofisticação e gestores. Já a estratégia DR, por ser mais recente e por exigir um conhecimento mais técnico de matemática e estatística é a menos utilizada, entretanto vem ganhando cada vez mais adeptos no mercado, principalmente nos fundos classificados como quantitativos.
+
+Abordaremos neste trabalho algumas possibilidades que a abordagem DR permite, fazendo uma comparação com a abordagem do tipo DP, a mais simples de todas, em que todos os ativos tem pesos iguais (PI).
+
+
+# A definição de risco
+Para construirmos estratégias do tipo DR precisamos definir uma maneira de medir o risco de cada ativo. Diremos que um portfólio com $n$ ativos é um vetor do tipo $x = (x_1, x_2, \dots, x_n)^\top$ onde cada coordenada $x_i$ do portfólio $x$ é a proporção do capital aplicada no ativo $i$. Assumiremos que o capital está totalmente alocado, isto é, $e^\top x=1$, onde $e = (1,1,\dots,1)$. Além disso, consideraremos $x_i\geq 0$ para todo $i$, isto significa que o investidor não pode "vender sem ter" a ação em carteira.[^venda_desc]
+
+[^venda_desc]: Pode parecer estranho a primeira vista a possibilidade de se vender um bem que não possui. Porém esta prática é comum no mercado e é chamada de **venda à descoberto**.
+
+
+
+Em 1999 Artzner, Delbaen, Eber e Heath (veja [1]) definiram que, para que uma função $\mathcal{R}(x)$ possa ser considerada uma *medida de risco coerente* ela precisa satisfazer quatro propriedades:
+subaditividade, homogeneidade, monotonicidade e translação. Com esta definição podemos definir algumas alternativas para se medir o risco de um investimento, como por exemplo a volatilidade dos retornos ou a probilidade da perda. Uma vez definida a maneira de se medir o risco podemos usá-la na construção ou análise de portfólios.
+
+
+# Referências 
+[1] Artzner A., Delbaen F., Eber J.-M. and Heath D., *Coherent
+Measures of Risk*, Mathematical Finance, 9(3), pp. 203-228, 1999.
+
+[2] Roncalli, T., *Introduction to Risk Parity and Budgeting*, CRC Press, 2014.
